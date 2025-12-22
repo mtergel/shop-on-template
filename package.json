@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "compile": "lingui compile"
+    "compile": "lingui extract && lingui compile"
   },
   "dependencies": {
     "next": "16.0.10",
