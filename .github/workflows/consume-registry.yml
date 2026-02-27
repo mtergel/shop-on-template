@@ -36,6 +36,13 @@ jobs:
 
       - run: pnpm dlx shadcn@latest add ${{ inputs.registry_url }} -o
 
+      - name: Move public env vars to .env.production
+        run: |
+          if [ -f .env.local ]; then
+            grep '^NEXT_PUBLIC_' .env.local > .env.production
+            rm .env.local
+          fi
+
       - run: pnpm compile
 
       - uses: stefanzweifel/git-auto-commit-action@v5
