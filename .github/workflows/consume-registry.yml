@@ -34,7 +34,7 @@ jobs:
 
       - run: pnpm install
 
-      - run: pnpm dlx shadcn@latest add ${{ inputs.registry_url }} -o
+      - run: pnpm dlx shadcn@latest add ${{ inputs.registry_url }} --yes --overwrite
 
       - name: Move public env vars to .env.production
         run: |
